@@ -1,0 +1,136 @@
+.app-container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.signature-canvas {
+  border: 2px dashed #e5e7eb;
+  border-radius: 8px;
+}
+
+.signature-canvas:hover {
+  border-color: #4F46E5;
+}
+
+.document-field {
+  position: absolute;
+  border: 2px solid #4F46E5;
+  background: rgba(79, 70, 229, 0.1);
+  cursor: move;
+  user-select: none;
+}
+
+.document-field:hover {
+  background: rgba(79, 70, 229, 0.2);
+}
+
+.document-field.signature {
+  border-color: #FBBF24;
+  background: rgba(251, 191, 36, 0.1);
+}
+
+.document-field.signature:hover {
+  background: rgba(251, 191, 36, 0.2);
+}
+
+.pdf-viewer {
+  position: relative;
+  overflow: auto;
+  background: #fff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.field-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.progress-bar {
+  height: 4px;
+  background: linear-gradient(90deg, #4F46E5, #FBBF24);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  max-width: 400px;
+  padding: 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.notification.success {
+  background: #10b981;
+}
+
+.notification.error {
+  background: #ef4444;
+}
+
+.notification.info {
+  background: #3b82f6;
+}
+
+.drag-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(79, 70, 229, 0.1);
+  border: 2px dashed #4F46E5;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #4F46E5;
+  font-weight: 600;
+}
+
+.loading-spinner {
+  border: 3px solid #f3f4f6;
+  border-top: 3px solid #4F46E5;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
